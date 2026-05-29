@@ -10,9 +10,9 @@
 
 // FIREBASE
 
-#define API_KEY "AIzaSyBmPvSBUqeWTzVePvxRHvvxJ5KPq2QYHYc"
+#define API_KEY ""
 
-#define DATABASE_URL "esp32control-60244-default-rtdb.asia-southeast1.firebasedatabase.app"
+#define DATABASE_URL ""
 
 // FIREBASE OBJECTS
 
