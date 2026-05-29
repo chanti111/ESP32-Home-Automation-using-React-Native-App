@@ -1,0 +1,125 @@
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+
+export default function App() {
+
+  const esp32IP = '192.168.131.116';
+
+  const controlLED = async (path) => {
+
+    try {
+
+      await fetch(`http://${esp32IP}/${path}`);
+
+    } catch (error) {
+
+      console.log(error);
+
+    }
+  };
+
+  const ButtonCard = ({ title, onPress, color }) => (
+
+    <TouchableOpacity
+      onPress={onPress}
+      style={{
+        backgroundColor: color,
+        padding: 18,
+        borderRadius: 12,
+        marginBottom: 12,
+        alignItems: 'center'
+      }}>
+
+      <Text
+        style={{
+          color: 'white',
+          fontSize: 18,
+          fontWeight: 'bold'
+        }}>
+        {title}
+      </Text>
+
+    </TouchableOpacity>
+  );
+
+  return (
+
+    <ScrollView
+      contentContainerStyle={{
+        padding: 20,
+        paddingTop: 60
+      }}>
+
+      <Text
+        style={{
+          fontSize: 28,
+          fontWeight: 'bold',
+          marginBottom: 25,
+          textAlign: 'center'
+        }}>
+        ESP32 LED Control
+      </Text>
+
+      <ButtonCard
+        title="LED1 ON"
+        color="green"
+        onPress={() => controlLED('led1on')}
+      />
+
+      <ButtonCard
+        title="LED1 OFF"
+        color="red"
+        onPress={() => controlLED('led1off')}
+      />
+
+      <ButtonCard
+        title="LED2 ON"
+        color="green"
+        onPress={() => controlLED('led2on')}
+      />
+
+      <ButtonCard
+        title="LED2 OFF"
+        color="red"
+        onPress={() => controlLED('led2off')}
+      />
+
+      <ButtonCard
+        title="LED3 ON"
+        color="green"
+        onPress={() => controlLED('led3on')}
+      />
+
+      <ButtonCard
+        title="LED3 OFF"
+        color="red"
+        onPress={() => controlLED('led3off')}
+      />
+
+      <ButtonCard
+        title="LED4 ON"
+        color="green"
+        onPress={() => controlLED('led4on')}
+      />
+
+      <ButtonCard
+        title="LED4 OFF"
+        color="red"
+        onPress={() => controlLED('led4off')}
+      />
+
+      <ButtonCard
+        title="LED5 ON"
+        color="green"
+        onPress={() => controlLED('led5on')}
+      />
+
+      <ButtonCard
+        title="LED5 OFF"
+        color="red"
+        onPress={() => controlLED('led5off')}
+      />
+
+    </ScrollView>
+
+  );
+}
